@@ -7,6 +7,8 @@ public class Deck {
   // Instance Variables
   private ArrayList<Card> deck = new ArrayList<>();
   private Random random = new Random();
+  private int deckSize = deck.size();
+  private Card topCard;
 
   /**
    * Default constructor that creates the 81 card deck
@@ -45,16 +47,13 @@ public class Deck {
    * Shuffles the ArrayList deck
    */
   public void shuffle() {
-    // Local variables
-    int deckSize = this.deck.size();
-
     for (int i = 0; i < deckSize; i++) {
       // Get a random card
       int randomIndex = random.nextInt(deckSize);
-      Card randomCard = this.deck.get(randomIndex);
+      Card randomCard = deck.get(randomIndex);
 
       // Replace each index with a random card in the deck
-      this.deck.set(i, randomCard);
+      deck.set(i, randomCard);
     }
   }
 
@@ -67,12 +66,33 @@ public class Deck {
     // Local variables
     String output = "";
     int cardNumber = 0;
-    for (Card card : this.deck) {
+    for (Card card : deck) {
       output += "Card Number: " + cardNumber + "\n" + card + "\n\n";
       cardNumber++;
     }
 
     return output;
+  }
+
+  /**
+   * Checks to see if the current deck is empty
+   * @return boolean
+   */
+  public boolean isEmpty() {
+    if (deckSize == 0) {
+      return true;
+    }
+
+    return false;
+  }
+
+  /**
+   * Return the card that is on "top" of the deck, or index 0
+   * @return Card topCard
+   */
+  public Card getTopCard() {
+    topCard = deck.get(0);
+    return topCard;
   }
 
 }

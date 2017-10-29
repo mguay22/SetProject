@@ -48,7 +48,7 @@ public class Card {
   public String toString() {
     // Local output String variable
     String output;
-    output = String.format("Shape: %s\n Color: %s\n Number: %s\n Shading: %s", SHAPE, COLOR, NUMBER, SHADING);
+    output = String.format("%s_%s_%s_%s", NUMBER, COLOR, SHAPE, SHADING);
     return output;
   }
 
