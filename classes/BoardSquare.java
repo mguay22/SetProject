@@ -1,3 +1,12 @@
+/*
+ * By: Michael Guay
+ * Class: Java 110
+ * Date created: 10/29/17
+ * Date last modified: 10/29/17
+ * Description: Represents a board square which contains a column a row
+ * and a card 
+ */
+
 package classes;
 
 public class BoardSquare {

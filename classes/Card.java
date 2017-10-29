@@ -1,3 +1,12 @@
+/*
+ * By: Michael Guay
+ * Class: Java 110
+ * Date created: 10/29/17
+ * Date last modified: 10/29/17
+ * Description: Represents a single card in the game of set and contains
+ * a method to check if three cards form a set
+ */
+
 package classes;
 
 public class Card {
@@ -46,8 +55,9 @@ public class Card {
    */
   @Override
   public String toString() {
-    // Local output String variable
+    // Local variables
     String output;
+
     output = String.format("%s_%s_%s_%s", NUMBER, COLOR, SHAPE, SHADING);
     return output;
   }
@@ -60,7 +70,7 @@ public class Card {
    * @return boolean
    */
   public static void findSet(Card card1, Card card2, Card card3) {
-    // TODO: Compare the three cards and see if they form a set
+    // TODO: Check to see if the cards are the same
   }
 
 }

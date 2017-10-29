@@ -1,3 +1,12 @@
+/*
+ * By: Michael Guay
+ * Class: Java 110
+ * Date created: 10/29/17
+ * Date last modified: 10/29/17
+ * Description: Represents a deck of 81 cards and contains methods that can be
+ * applied to those cards, such as shuffle(), also contains getters and setters
+ */
+
 package classes;
 
 import java.util.ArrayList;
@@ -66,6 +75,7 @@ public class Deck {
     // Local variables
     String output = "";
     int cardNumber = 0;
+
     for (Card card : deck) {
       output += "Card Number: " + cardNumber + "\n" + card + "\n\n";
       cardNumber++;
@@ -92,6 +102,10 @@ public class Deck {
    */
   public Card getTopCard() {
     topCard = deck.get(0);
+
+    // Move the card to the bottom of the deck
+    deck.add(deck.remove(0));
+
     return topCard;
   }
 
