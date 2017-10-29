@@ -5,27 +5,19 @@ public class Card {
 
   // Set up enums to represent each set of features
   protected enum Shape {
-    OVAL,
-    SQUIGGLES,
-    DIAMONDS
+    OVAL, SQUIGGLES, DIAMONDS
   }
 
   protected enum Color {
-    RED,
-    PURPLE,
-    GREEN
+    RED, PURPLE, GREEN
   }
 
   protected enum Number {
-    ONE,
-    TWO,
-    THREE
+    ONE, TWO, THREE
   }
 
   protected enum Shading {
-    SOLID,
-    STRIPED,
-    OUTLINED
+    SOLID, STRIPED, OUTLINED
   }
 
   // Constants
@@ -42,12 +34,10 @@ public class Card {
    * @param  Shading shading
    */
   public Card(Shape shape, Color color, Number number, Shading shading) {
-
     this.SHAPE = shape;
     this.COLOR = color;
     this.NUMBER = number;
     this.SHADING = shading;
-
   }
 
   /**
@@ -58,10 +48,19 @@ public class Card {
   public String toString() {
     // Local output String variable
     String output;
-    output = String.format("Shape: %s\n Color: %s\n Number: %s\n Shading: %s",
-                          SHAPE, COLOR, NUMBER, SHADING);
+    output = String.format("Shape: %s\n Color: %s\n Number: %s\n Shading: %s", SHAPE, COLOR, NUMBER, SHADING);
     return output;
   }
 
+  /**
+   * Takes three cards as parameters and returns true if they form a set
+   * @param  Card card1
+   * @param  Card card2
+   * @param  Card card3
+   * @return boolean
+   */
+  public static void findSet(Card card1, Card card2, Card card3) {
+    // TODO: Compare the three cards and see if they form a set
+  }
 
 }
