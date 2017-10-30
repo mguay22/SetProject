@@ -69,8 +69,33 @@ public class Card {
    * @param  Card card3
    * @return boolean
    */
-  public static void findSet(Card card1, Card card2, Card card3) {
-    // TODO: Check to see if the cards are the same
+  public static boolean isSet(Card card1, Card card2, Card card3) {
+    // Check the number
+    if (!((card1.NUMBER == card2.NUMBER) && (card2.NUMBER == card3.NUMBER)
+        || (card1.NUMBER != card2.NUMBER) && (card1.NUMBER != card3.NUMBER) && (card2.NUMBER != card3.NUMBER))) {
+      return false;
+    }
+
+    // Check the shape
+    if (!((card1.SHAPE == card2.SHAPE) && (card2.SHAPE == card3.SHAPE)
+        || (card1.SHAPE != card2.SHAPE) && (card1.SHAPE != card3.SHAPE) && (card2.SHAPE != card3.SHAPE))) {
+      return false;
+    }
+
+    // Check the shading
+    if (!((card1.SHADING == card2.SHADING) && (card2.SHADING == card3.SHADING)
+        || (card1.SHADING != card2.SHADING) && (card1.SHADING != card3.SHADING) && (card2.SHADING != card3.SHADING))) {
+      return false;
+    }
+
+    // Check the color
+    if (!((card1.COLOR == card2.COLOR) && (card2.COLOR == card3.COLOR)
+        || (card1.COLOR != card2.COLOR) && (card1.COLOR != card3.COLOR) && (card2.COLOR != card3.COLOR))) {
+      return false;
+    }
+
+    // If nothing above has been met, then a set has been formed and return true
+    return true;
   }
 
 }
