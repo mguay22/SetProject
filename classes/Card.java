@@ -70,15 +70,15 @@ public class Card {
    * @return boolean
    */
   public static boolean isSet(Card card1, Card card2, Card card3) {
-    // Check the number
-    if (!((card1.NUMBER == card2.NUMBER) && (card2.NUMBER == card3.NUMBER)
-        || (card1.NUMBER != card2.NUMBER) && (card1.NUMBER != card3.NUMBER) && (card2.NUMBER != card3.NUMBER))) {
+    // Check the color
+    if (!((card1.COLOR == card2.COLOR) && (card2.COLOR == card3.COLOR)
+        || (card1.COLOR != card2.COLOR) && (card1.COLOR != card3.COLOR) && (card2.COLOR != card3.COLOR))) {
       return false;
     }
 
-    // Check the shape
-    if (!((card1.SHAPE == card2.SHAPE) && (card2.SHAPE == card3.SHAPE)
-        || (card1.SHAPE != card2.SHAPE) && (card1.SHAPE != card3.SHAPE) && (card2.SHAPE != card3.SHAPE))) {
+    // Check the number
+    if (!((card1.NUMBER == card2.NUMBER) && (card2.NUMBER == card3.NUMBER)
+        || (card1.NUMBER != card2.NUMBER) && (card1.NUMBER != card3.NUMBER) && (card2.NUMBER != card3.NUMBER))) {
       return false;
     }
 
@@ -88,9 +88,9 @@ public class Card {
       return false;
     }
 
-    // Check the color
-    if (!((card1.COLOR == card2.COLOR) && (card2.COLOR == card3.COLOR)
-        || (card1.COLOR != card2.COLOR) && (card1.COLOR != card3.COLOR) && (card2.COLOR != card3.COLOR))) {
+    // Check the shape
+    if (!((card1.SHAPE == card2.SHAPE) && (card2.SHAPE == card3.SHAPE)
+        || (card1.SHAPE != card2.SHAPE) && (card1.SHAPE != card3.SHAPE) && (card2.SHAPE != card3.SHAPE))) {
       return false;
     }
 
