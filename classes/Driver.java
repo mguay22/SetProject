@@ -14,6 +14,7 @@ public class Driver {
 
     Deck d = new Deck();
     d.shuffle();
+
     Board b = new Board(d);
     System.out.println(b);
     System.out.println(b.getCard(0, 0));

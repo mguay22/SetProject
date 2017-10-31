@@ -56,14 +56,9 @@ public class Deck {
    * Shuffles the ArrayList deck
    */
   public void shuffle() {
-    for (int i = 0; i < deckSize; i++) {
-      // Get a random card
-      int randomIndex = random.nextInt(deckSize);
-      Card randomCard = deck.get(randomIndex);
-
-      // Replace each index with a random card in the deck
-      deck.set(i, randomCard);
-    }
+    // Create a new Deck and set it's deck to the current Deck
+    Deck shuffledDeck = new Deck();
+    this.deck = shuffledDeck.deck;
   }
 
   /**
