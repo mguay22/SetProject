@@ -36,7 +36,7 @@ public class Card {
   private final Shading SHADING;
 
   /**
-   * Card constructor. Intitalizes the instance variables upon instantiation.
+   * Card constructor. Initializes the instance variables upon instantiation.
    * @param  Shape   shape
    * @param  Color   color
    * @param  Number  number

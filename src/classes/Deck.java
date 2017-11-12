@@ -10,6 +10,7 @@
 package classes;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Random;
 
 public class Deck {
@@ -23,42 +24,36 @@ public class Deck {
    * Default constructor that creates the 81 card deck
    */
   public Deck() {
-    // Loop through 81 times to construct the deck. Use Random to generate
-    // random card attributes
-    for (int i = 0; i <= 81; i++) {
-      // Implementation of getting a random value from an enum in java
-      // taken from: https://stackoverflow.com/questions/1972392/java-pick-a-random-value-from-an-enum
-
-      // Get a random shape
-      int randomShapeInt = random.nextInt(Card.Shape.values().length);
-      Card.Shape shape = Card.Shape.values()[randomShapeInt];
-
-      // Get a random color
-      int randomColorInt = random.nextInt(Card.Color.values().length);
-      Card.Color color = Card.Color.values()[randomColorInt];
-
-      // Get a random number
-      int randomNumberInt = random.nextInt(Card.Number.values().length);
-      Card.Number number = Card.Number.values()[randomNumberInt];
-
-      // Get a random shading
-      int randomShadingInt = random.nextInt(Card.Shading.values().length);
-      Card.Shading shading = Card.Shading.values()[randomShadingInt];
-
-      // Create a new card and add it to the deck
-      Card card = new Card(shape, color, number, shading);
-      deck.add(card);
+      
+    for (int number = 0; number < 3; number++) {
+        for (int shape = 0; shape < 3; shape ++) {
+            for (int shading = 0; shading < 3; shading++) {
+                for (int color = 0; color < 3; color++) {
+                    Card card = new Card(Card.Shape.values()[shape],
+                            Card.Color.values()[color],
+                            Card.Number.values()[number],
+                            Card.Shading.values()[shading]);
+                    
+                    deck.add(card);
+                }
+            }
+        }
     }
 
-  }
+}
 
   /**
    * Shuffles the ArrayList deck
    */
   public void shuffle() {
-    // Create a new Deck and set it's deck to the current Deck
-    Deck shuffledDeck = new Deck();
-    this.deck = shuffledDeck.deck;
+    int newIndex;
+    
+    // Swap method taken from 
+    http://www.java2s.com/Code/Java/Collections-Data-Structure/SwapelementsofJavaArrayList.htm  
+    for (int i = 0; i < 81; i++) {
+        newIndex = random.nextInt(81);
+        Collections.swap(deck, i, newIndex);
+    }
   }
 
   /**
@@ -103,5 +98,6 @@ public class Deck {
 
     return topCard;
   }
+ 
 
 }
