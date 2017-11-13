@@ -37,10 +37,10 @@ public class Card {
 
   /**
    * Card constructor. Initializes the instance variables upon instantiation.
-   * @param  Shape   shape
-   * @param  Color   color
-   * @param  Number  number
-   * @param  Shading shading
+   * @param  shape
+   * @param  color
+   * @param  number
+   * @param  shading
    */
   public Card(Shape shape, Color color, Number number, Shading shading) {
     this.SHAPE = shape;
@@ -64,9 +64,9 @@ public class Card {
 
   /**
    * Takes three cards as parameters and returns true if they form a set
-   * @param  Card card1
-   * @param  Card card2
-   * @param  Card card3
+   * @param  card1
+   * @param  card2
+   * @param  card3
    * @return boolean
    */
   public static boolean isSet(Card card1, Card card2, Card card3) {

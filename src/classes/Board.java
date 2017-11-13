@@ -68,9 +68,9 @@ public class Board {
 
   /**
    * Replace the card at a given row and column, or board square
-   * @param Card card
-   * @param int  row
-   * @param int  col
+   * @param card
+   * @param row
+   * @param col
    */
   public void replaceCard(Card card, int row, int col) {
     // Get the row array list
@@ -85,8 +85,8 @@ public class Board {
 
   /**
    * Return the board square at the given row and column
-   * @param  int row
-   * @param  int col
+   * @param  row
+   * @param  col
    * @return BoardSquare boardSquare
    */
   public BoardSquare getBoardSquare(int row, int col) {
@@ -98,7 +98,7 @@ public class Board {
 
   /**
    * Add three cards from the deck to the board
-   * @param Deck deck
+   * @param deck
    */
   public void add3(Deck deck) {
     for (int i = 0; i < board.size(); i++) {
@@ -122,8 +122,8 @@ public class Board {
 
   /**
    * Return the card at a given board square
-   * @param  int row
-   * @param  int col
+   * @param  row
+   * @param  col
    * @return Card card
    */
   public Card getCard(int row, int col) {

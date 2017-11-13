@@ -18,9 +18,9 @@ public class BoardSquare {
   /**
    * Constructor that builds a board square for the card using the given
    * row and column numbers
-   * @param  Card card
-   * @param  int  rowNumber
-   * @param  int  colNumber
+   * @param  card
+   * @param  rowNumber
+   * @param  colNumber
    */
   public BoardSquare(Card card, int rowNumber, int colNumber) {
     this.card = card;
@@ -31,8 +31,8 @@ public class BoardSquare {
   /**
    * Returns a boolean based off of whether or not the current board
    * square matches the one that is passed in
-   * @param  int rowNumber
-   * @param  int colNumber
+   * @param  rowNumber
+   * @param  colNumber
    */
   public boolean isSelected(int rowNumber, int colNumber) {
     if (this.rowNumber == rowNumber && this.colNumber == colNumber) {
@@ -52,7 +52,7 @@ public class BoardSquare {
 
   /**
    * Set the card at the current board square
-   * @param Card card
+   * @param card
    */
   public void setCard(Card card) {
     this.card = card;
@@ -60,7 +60,7 @@ public class BoardSquare {
 
   /**
    * Get the row number for the current board square
-   * @return int rowNumber
+   * @return rowNumber
    */
   public int getRowNumber() {
     return rowNumber;
@@ -68,7 +68,7 @@ public class BoardSquare {
 
   /**
    * Set the row number for the current board square
-   * @param int rowNumber
+   * @param rowNumber
    */
   public void setRowNumber(int rowNumber) {
     this.rowNumber = rowNumber;
@@ -84,7 +84,7 @@ public class BoardSquare {
 
   /**
    * Set the column number for the current board square
-   * @param int colNumber
+   * @param colNumber
    */
   public void setColNumber(int colNumber) {
     this.colNumber = colNumber;
