@@ -2,7 +2,7 @@
  * By: Michael Guay
  * Class: Java 110
  * Date created: 10/29/17
- * Date last modified: 10/29/17
+ * Date last modified: 11/12/17
  * Description: Represents a deck of 81 cards and contains methods that can be
  * applied to those cards, such as shuffle(), also contains getters and setters
  */
@@ -17,7 +17,7 @@ public class Deck {
   // Instance Variables
   private ArrayList<Card> deck = new ArrayList<>();
   private Random random = new Random();
-  private int deckSize = deck.size();
+  int deckSize;
   private Card topCard;
 
   /**
@@ -39,6 +39,10 @@ public class Deck {
             }
         }
     }
+    
+    // Initial deck size
+    deckSize = 81;
+    this.shuffle();
 
 }
 
@@ -50,8 +54,8 @@ public class Deck {
     
     // Swap method taken from 
     http://www.java2s.com/Code/Java/Collections-Data-Structure/SwapelementsofJavaArrayList.htm  
-    for (int i = 0; i < 81; i++) {
-        newIndex = random.nextInt(81);
+    for (int i = 0; i < deckSize; i++) {
+        newIndex = random.nextInt(deckSize);
         Collections.swap(deck, i, newIndex);
     }
   }
@@ -79,11 +83,7 @@ public class Deck {
    * @return boolean
    */
   public boolean isEmpty() {
-    if (deckSize == 0) {
-      return true;
-    }
-
-    return false;
+    return deckSize == 0;
   }
 
   /**
@@ -97,6 +97,25 @@ public class Deck {
     deck.add(deck.remove(0));
 
     return topCard;
+  }
+  
+  /**
+   * Remove a given card from the deck
+   * @param card
+   */
+  public void removeCard(Card card) {
+      int index = deck.indexOf(card);
+      deck.remove(index);
+      
+      // Update deck size
+      setDeckSize();
+  }
+  
+  /**
+   * Update the deck size
+   */
+  public void setDeckSize() {
+      deckSize = deck.size();
   }
  
 

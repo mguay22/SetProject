@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class Board {
   // Instance variables
-  public ArrayList<ArrayList<BoardSquare>> board = new ArrayList<>();
+  protected ArrayList<ArrayList<BoardSquare>> board = new ArrayList<>();
 
   /**
    * Default constructor that fills the board with four rows and three columns

@@ -2,7 +2,7 @@
  * By: Michael Guay
  * Class: Java 110
  * Date created: 10/29/17
- * Date last modified: 10/29/17
+ * Date last modified: 11/12/17
  * Description: Represents a board square which contains a column a row
  * and a card 
  */
@@ -88,5 +88,16 @@ public class BoardSquare {
    */
   public void setColNumber(int colNumber) {
     this.colNumber = colNumber;
+  }
+  
+  /**
+   * BoardSquare toString implementation
+   * @return String output
+   */
+  @Override
+  public String toString() {
+      String output;
+      output = String.format("%s", card);
+      return output;
   }
 }
