@@ -2,7 +2,7 @@
  * By: Michael Guay
  * Class: Java 110
  * Date created: 10/29/17
- * Date last modified: 10/29/17
+ * Date last modified: 12/4/17
  * Description: Represents a single card in the game of set and contains
  * a method to check if three cards form a set
  */
@@ -70,6 +70,10 @@ public class Card {
    * @return boolean
    */
   public static boolean isSet(Card card1, Card card2, Card card3) {
+    if (card1.equals(card2) && card1.equals(card3) && card2.equals(card3)) {
+        return false;
+    }
+      
     // Check the color
     if (!((card1.COLOR == card2.COLOR) && (card2.COLOR == card3.COLOR)
         || (card1.COLOR != card2.COLOR) && (card1.COLOR != card3.COLOR) && (card2.COLOR != card3.COLOR))) {
@@ -97,5 +101,38 @@ public class Card {
     // If nothing above has been met, then a set has been formed and return true
     return true;
   }
-
+  
+  /**
+   * Returns the shape of the current card
+   * @return 
+   */
+  public Shape getShape() {
+      return SHAPE;
+  }
+  
+  /**
+   * Return the color of the current card
+   * @return 
+   */
+  public Color getColor() {
+      return COLOR;
+  }
+  
+  /**
+   * Return the shading of the current card
+   * @return 
+   */
+  public Shading getShading() {
+      return SHADING;
+  }
+  
+  /**
+   * Return the number of shapes
+   * @return 
+   */
+  public Number getNumber() {
+      return NUMBER;
+  }
+  
+  
 }

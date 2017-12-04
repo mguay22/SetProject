@@ -2,7 +2,7 @@
  * By: Michael Guay
  * Class: Java 110
  * Date created: 10/29/17
- * Date last modified: 10/29/17
+ * Date last modified: 12/4/17
  * Description: Represents a board filled with all 12 board squares (initially)
  * and includes a number of methods that can be applied to the board
  */
@@ -95,7 +95,7 @@ public class Board {
 
     return boardSquare;
   }
-
+  
   /**
    * Add three cards from the deck to the board
    * @param deck
@@ -109,7 +109,7 @@ public class Board {
       ArrayList<BoardSquare> boardSquareArrayList = board.get(i);
 
       // Get the last column
-      int col = boardSquareArrayList.size() + 1;
+      int col = boardSquareArrayList.size();
 
       // Create a new board square and add it to the current row
       BoardSquare boardSquare = new BoardSquare(card, i, col);
@@ -139,7 +139,7 @@ public class Board {
 
     return card;
   }
-
+  
   /**
    * Return the number of rows for the board
    * @return int numRows
@@ -158,12 +158,12 @@ public class Board {
    * Return the number of columns for the board
    * @return int numCols
    */
-  public int numCols() {
+  public int numCols(int row) {
     // Local variables
     int numCols;
 
     // Get the size of an individual row, or the number of columns
-    ArrayList<BoardSquare> boardSquareArrayList = board.get(0);
+    ArrayList<BoardSquare> boardSquareArrayList = board.get(row);
     numCols = boardSquareArrayList.size();
 
     return numCols;

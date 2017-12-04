@@ -2,7 +2,7 @@
  * By: Michael Guay
  * Class: Java 110
  * Date created: 10/29/17
- * Date last modified: 11/12/17
+ * Date last modified: 12/4/17
  * Description: Represents a board square which contains a column a row
  * and a card 
  */
@@ -47,7 +47,18 @@ public class BoardSquare {
    * @return Card card
    */
   public Card getCard() {
+    if (this.card == null) {
+        return null;
+    }
+      
     return card;
+  }
+  
+  /**
+   * Removes a card by setting it to tull
+   */
+  public void removeCard() {
+      this.card = null;
   }
 
   /**

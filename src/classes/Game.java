@@ -2,7 +2,7 @@
  * By: Michael Guay
  * Class: Java 110
  * Date created: 11/12/17
- * Date last modified: 11/12/17
+ * Date last modified: 12/4/17
  * Description: The class for the game. Ties all of the supporting classes
  * together to allow the user to play.
  */
@@ -19,7 +19,7 @@ public class Game {
     
     // Instance Variables
     private Deck deck = new Deck();
-    private Board board = new Board(deck);
+    protected Board board = new Board(deck);
     private ArrayList<BoardSquare> selected = new ArrayList<>();
     
     /**
@@ -47,7 +47,7 @@ public class Game {
      */
     public void addToSelected(int row, int col) {
         // Subtract one to account for indexing
-        BoardSquare boardSquare = board.getBoardSquare(row - 1, col - 1);
+        BoardSquare boardSquare = board.getBoardSquare(row, col);
         selected.add(boardSquare);
     }
     
@@ -64,7 +64,7 @@ public class Game {
      * If they are, replace the cards and remove the set from the deck,
      * otherwise just clear out the selected array list
      */
-    public void testSelected() {
+    public boolean testSelected() {
         
         // Local variables
         
@@ -72,18 +72,17 @@ public class Game {
         Card card1 = selected.get(0).getCard();
         Card card2 = selected.get(1).getCard();
         Card card3 = selected.get(2).getCard();
-        
+              
         // If a set is formed, add a new card to board squares and remove the set
         // cards from the deck
         if (Card.isSet(card1, card2, card3)) {
-            selected.get(0).setCard(deck.getTopCard());
             deck.removeCard(card1);
-            
-            selected.get(1).setCard(deck.getTopCard());
             deck.removeCard(card2);
-            
-            selected.get(2).setCard(deck.getTopCard());
             deck.removeCard(card3);
+
+            selected.get(0).setCard(deck.getTopCard());
+            selected.get(1).setCard(deck.getTopCard()); 
+            selected.get(2).setCard(deck.getTopCard());
             
             System.out.println("Set!");
             
@@ -92,10 +91,14 @@ public class Game {
             
             // Update the deck size
             deck.setDeckSize();
+            
+            return true;
         } else {
             // No set, clear the selected array list
             System.out.println("Not a set!");
             selected.clear();
+            
+            return false;
         }
 
     }
@@ -128,4 +131,21 @@ public class Game {
     public ArrayList getSelected() {
         return selected;
     }
+    
+    /**
+     * Returns the current games board
+     * @return 
+     */
+    public Board getBoard() {
+        return board;
+    }
+    
+    /**
+     * Return the deck
+     * @return 
+     */
+    public Deck getDeck() {
+        return deck;
+    }
+    
 }

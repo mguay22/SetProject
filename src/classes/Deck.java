@@ -2,7 +2,7 @@
  * By: Michael Guay
  * Class: Java 110
  * Date created: 10/29/17
- * Date last modified: 11/12/17
+ * Date last modified: 12/4/17
  * Description: Represents a deck of 81 cards and contains methods that can be
  * applied to those cards, such as shuffle(), also contains getters and setters
  */
@@ -17,7 +17,7 @@ public class Deck {
   // Instance Variables
   private ArrayList<Card> deck = new ArrayList<>();
   private Random random = new Random();
-  int deckSize;
+  public int deckSize;
   private Card topCard;
 
   /**
@@ -91,11 +91,9 @@ public class Deck {
    * @return Card topCard
    */
   public Card getTopCard() {
-    topCard = deck.get(0);
-
-    // Move the card to the bottom of the deck
-    deck.add(deck.remove(0));
-
+    topCard = deck.remove(0);
+    
+    setDeckSize();
     return topCard;
   }
   
@@ -104,11 +102,14 @@ public class Deck {
    * @param card
    */
   public void removeCard(Card card) {
-      int index = deck.indexOf(card);
-      deck.remove(index);
+    int index = deck.indexOf(card);
       
-      // Update deck size
-      setDeckSize();
+    if (index > 0 && index <= deck.size()) {
+        deck.remove(index);
+    } 
+      
+    // Update deck size
+    setDeckSize();
   }
   
   /**
